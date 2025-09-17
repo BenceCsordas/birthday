@@ -6,17 +6,25 @@ import { Header } from './components/Header'
 import { Counter } from './components/Counter'
 import { persons } from './data'
 import { PersList } from './components/PersList'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 function App() {
+
   const [pers, setPers] = useState(persons)
+  
 
   return (
-      
       <div className='container'>
-        <Header/>
+      <Header/>
+      
+      <div className='app m-0 d-flex flex-column align-items-center'>
+        
         <Counter count={pers.length}/>
         {pers.length != 0  && <PersList pers={pers} setPers={setPers}/>}
-    </div>
+        
+    </div></div>
   )
 }
 
